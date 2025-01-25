@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('vat_num')->unsigned()->unique();
-            $table->integer('phone')->unsigned()->unique();
+            $table->string('vat_num', 13)->unique();
+            $table->string('phone')->unique();
             $table->string('email')->unique();
-            $table->text('logo');
+            $table->text('logo')->nullable();
             $table->string('city');
             $table->string('region');
             $table->timestamps();
