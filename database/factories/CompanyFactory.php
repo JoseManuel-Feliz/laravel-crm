@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Industry;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,15 @@ class CompanyFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
-            //
+            'name' => fake()->company(),
+            'vat_num' => fake()->unique()->vat(),
+            'phone' => fake()->unique()->e164PhoneNumber(),
+            'email' => fake()->unique()->companyEmail(),
+            'city' => fake()->city(),
+            'region' => fake()->state(),
+            'industry_id' => null,
         ];
     }
 }
