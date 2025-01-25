@@ -25,8 +25,8 @@ class Employee extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function jobs(): BelongsToMany
+    public function job(): BelongsTo
     {
-        return $this->belongsToMany(Job::class);
+        return $this->belongsTo(Job::class);
     }
 }

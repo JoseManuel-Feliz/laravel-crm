@@ -26,8 +26,8 @@ class Company extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function industries(): BelongsTo
+    public function industry(): BelongsTo
     {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(Industry::class);
     }
 }
