@@ -16,8 +16,10 @@ class CompanySeeder extends Seeder
     {
         $industriesIds = Industry::all()->pluck('id')->toArray();
 
-        Company::factory(500)->create([
+        Company::factory(500)->create(
+            [
             'industry_id' => fn() => fake()->randomElement($industriesIds),
-        ]);
+            ]
+        );
     }
 }

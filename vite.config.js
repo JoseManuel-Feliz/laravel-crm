@@ -1,19 +1,23 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 
-export default defineConfig({
-    plugins: [
-        laravel({
-            input: [
-                'resources/scss/general.scss',
-                'resources/js/app.js',
-            ],
-            refresh: true,
-        }),
-    ],
+export default defineConfig(
+    {
+        plugins: [
+            laravel(
+                {
+                    input: [
+                        'resources/scss/general.scss',
+                        'resources/js/app.js',
+                    ],
+                    refresh: true,
+                }
+            ),
+        ],
     resolve: {
         alias: {
             '~resorces': '/resources/'
         }
+        }
     }
-});
+);

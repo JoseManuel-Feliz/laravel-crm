@@ -11,17 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companies', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('vat_num', 13)->unique();
-            $table->string('phone')->unique();
-            $table->string('email')->unique();
-            $table->text('logo')->nullable();
-            $table->string('city');
-            $table->string('region');
-            $table->timestamps();
-        });
+        Schema::create(
+            'companies', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('vat_num', 13)->unique();
+                $table->string('phone')->unique();
+                $table->string('email')->unique();
+                $table->text('logo')->nullable();
+                $table->string('city');
+                $table->string('region');
+                $table->timestamps();
+            }
+        );
     }
 
     /**

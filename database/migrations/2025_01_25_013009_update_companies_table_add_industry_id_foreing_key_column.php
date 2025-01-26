@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('companies', function (Blueprint $table) {
-            $table->unsignedBigInteger('industry_id')->after('id');
-            $table->foreign('industry_id')->references('id')->on('industries');
-        });
+        Schema::table(
+            'companies', function (Blueprint $table) {
+                $table->unsignedBigInteger('industry_id')->after('id');
+                $table->foreign('industry_id')->references('id')->on('industries');
+            }
+        );
     }
 
     /**
@@ -22,9 +24,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('companies', function (Blueprint $table) {
-            $table->dropForeign('companies_industry_id_foreign');
-            $table->dropColumn('industry_id');
-        });
+        Schema::table(
+            'companies', function (Blueprint $table) {
+                $table->dropForeign('companies_industry_id_foreign');
+                $table->dropColumn('industry_id');
+            }
+        );
     }
 };
